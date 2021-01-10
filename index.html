@@ -9,14 +9,14 @@
 <body>
   <h1>Numerology Calculator</h1>
 
-  <p>Numerology dictates, that when you are born, you are endowed with four Personal 
+  <p class="pfont">Numerology dictates, that when you are born, you are endowed with four Personal 
     Numbers. These numbers will help guide you with the lessons you are to learn 
     throughout your life, and the path of your spirit. They are the <em>Life 
     Lesson Number</em>, the <em>Soul Number</em>, the <em>Outer Personality 
     Number</em>, and the <em>Path of Destiny Number</em>.
   </p>
 
-  <p>For a formal knowledge of the subject matter, I would highly recommend reading
+  <p class="pfont">For a formal knowledge of the subject matter, I would highly recommend reading
     <u>Numerology and The Divine Triangle</u> by Faith Javane and Dusty Bunker.
   </p>
 
@@ -28,6 +28,9 @@
     <form id="formform" action="#target">
       <h3>Please enter your Full Legal Name here (English names only, translated names 
         may not work!)</h3>
+        <p>There are special rules for whether Y is a vowel or consonant - this greatly
+          alters results! Click here for description and how to modify your answer!
+        </p>
       <input id="nametext" type="text" required>
       <h3>Please enter your Full Birthdate</h3>
       <input type="date" id="date">
@@ -40,7 +43,7 @@
   <!-- And why don't we just dynamically display the results here as well? 
     CUZ WHY NOT? -->
 
-  <p id="display">
+  <p id="display"  class="pfont">
     <!-- Display the four numbers from JS file -->
     Your Numbers: 
   </p>

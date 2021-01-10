@@ -5,19 +5,45 @@ let objLetterNumber = {
 }
 
 function returnString() {
-  document.getElementById("display").innerHTML = "Your Numbers:\n\n"
-  document.getElementById("display").innerHTML = "Path of Destiny Number: " + calcWordNumber(document.getElementById("nametext").value);
+  //Get the name and date
+  let fullname = document.getElementById("nametext").value;
+  let date = document.getElementById("date").value;
+  //Need to compare to vowels and consonants for the Soul and Outer #'s respect
+  let vowelStr = "aeiouAEIOU";
+  let consoStr = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+  //Separates the vowels and consonants from the name
+  let vowels = fullname.split("").filter(x => vowelStr.indexOf(x) > -1).join("");
+  console.log(vowels);
+  let conson = fullname.split("").filter(x => consoStr.indexOf(x) > -1).join("");
+  console.log(conson);
+  document.getElementById("display").innerHTML = "For the text:<br>" + fullname + 
+    "<br><br>Your Numbers Are:" + 
+    "<br><strong>Life Lesson Number: </strong>" + calcWordNumber(date) +
+    "<br><strong>Soul Number: </strong>" + calcWordNumber(vowels) +
+    "<br><strong>Outer Personality Number: </strong>" + calcWordNumber(conson) + 
+    "<br><strong>Path of Destiny Number: </strong>" + calcWordNumber(fullname);
 }
 
 function calcWordNumber(string) {
 	string = string.toUpperCase();
   let sum = 0;
   let master = 0;
-	for (let i = 0; i < string.length; i++) {
-  	if (string[i] >= "A" && string[i] <= "Z") {
-    	sum += objLetterNumber[string[i]];
+  //If there is no 0 or 1
+  if (string.indexOf("0") > -1 || string.indexOf("1") > -1) {
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] >= "0" && string[i] <= "9") {
+        sum += parseInt(string[i]);
+      }
+    }
+  } else {
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] >= "A" && string[i] <= "Z") {
+        sum += objLetterNumber[string[i]];
+      }
     }
   }
+
+  
   
   //Congest the number if it is too great
   if (sum > 78) 
@@ -36,9 +62,9 @@ function calcWordNumber(string) {
   console.log(sum)
   
   if (master > 0) {
-  	return "The base number of " + string + ", is: " + sum + ". Master num! " + left + "/" + master;
+  	return "Master num! " + master + ". Base number: " + left + "/" + sum + "."
   } else {
-  	return "The base number of " + string + ", is: " + left + "/" + sum + ". No master";
+  	return "No Master Number. Base Number: " + left + "/" + sum + ".";
   }
   
 }
