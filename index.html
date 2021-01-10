@@ -16,27 +16,41 @@
     Number</em>, and the <em>Path of Destiny Number</em>.
   </p>
 
-  <p>Below, you will be entering information in order to get your Life Numbers</p>
+  <p>For a formal knowledge of the subject matter, I would highly recommend reading
+    <u>Numerology and The Divine Triangle</u> by Faith Javane and Dusty Bunker.
+  </p>
+
+  <p>This is the source of the information that you will see provided below anyway! :)</p>
 
   <!-- Guess we're gonna need a form here right!? -->
-  <form>
-    <h3>Please enter your Full Legal Name here (English names only, translated names 
-      may not work!)</h3>
-    <input id="nametext" type="text">
-    <h3>Please enter your Full Birthdate</h3>
-    <input type="date" id="date">
+  <div id="formdiv">
+    <!-- Missed the part where the ACTION redirects back to the page!!! -->
+    <form id="formform" action="#target">
+      <h3>Please enter your Full Legal Name here (English names only, translated names 
+        may not work!)</h3>
+      <input id="nametext" type="text" required>
+      <h3>Please enter your Full Birthdate</h3>
+      <input type="date" id="date">
 
-    <br><br>
-    <input type="submit" id="submit" value="Enter!">
-  </form>
+      <br><br>
+      <input type="submit" id="submit" onclick="returnString()" value="Get Numbers!">
+    </form>
+  </div>
 
   <!-- And why don't we just dynamically display the results here as well? 
     CUZ WHY NOT? -->
 
+  <p id="display">
+    <!-- Display the four numbers from JS file -->
+    Your Numbers: 
+  </p>
+
 
   <footer>
-    <p>Citation: "Numerology and the Divine Triangle</p>
+    <p>Citation: "Numerology and the Divine Triangle", 1979, Authors: Faith Javane and Dusty Bunker</p>
   </footer>
+
+  <script type="text/javascript" src="javascript.js"></script>
 </body>
 
 </html>

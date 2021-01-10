@@ -4,6 +4,11 @@ let objLetterNumber = {
   S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
 }
 
+function returnString() {
+  document.getElementById("display").innerHTML = "Your Numbers:\n\n"
+  document.getElementById("display").innerHTML = "Path of Destiny Number: " + calcWordNumber(document.getElementById("nametext").value);
+}
+
 function calcWordNumber(string) {
 	string = string.toUpperCase();
   let sum = 0;
@@ -14,13 +19,13 @@ function calcWordNumber(string) {
     }
   }
   
-  console.log(sum);
   //Congest the number if it is too great
   if (sum > 78) 
   	sum = sum.toString().split("").map(x => parseInt(x)).reduce((acc, x) => acc + x);
   
-  //Number on left side
+  //Number on left side for breakdown of nums
   let left = sum;
+
   while (sum > 9) {
     if (sum === 11 || sum === 22 || sum === 33 || sum === 44) {
       master = sum;
@@ -38,4 +43,6 @@ function calcWordNumber(string) {
   
 }
 
-console.log(calcWordNumber("sacramento"))
+//document.getElementById("display").innerHTML = calcWordNumber(document.getElementById("nametext"));
+document.getElementById("formform").submit();
+
