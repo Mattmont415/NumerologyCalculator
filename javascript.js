@@ -13,15 +13,28 @@ function returnString() {
   let consoStr = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
   //Separates the vowels and consonants from the name
   let vowels = fullname.split("").filter(x => vowelStr.indexOf(x) > -1).join("");
-  console.log(vowels);
   let conson = fullname.split("").filter(x => consoStr.indexOf(x) > -1).join("");
-  console.log(conson);
-  document.getElementById("display").innerHTML = "For the text:<br>" + fullname + 
-    "<br><br>Your Numbers Are:" + 
-    "<br><strong>Life Lesson Number: </strong>" + calcWordNumber(date) +
-    "<br><strong>Soul Number: </strong>" + calcWordNumber(vowels) +
-    "<br><strong>Outer Personality Number: </strong>" + calcWordNumber(conson) + 
-    "<br><strong>Path of Destiny Number: </strong>" + calcWordNumber(fullname);
+
+  document.getElementById("textdisplay").innerHTML = fullname;
+  document.getElementById("bdaydisplay").innerHTML = translateDate(date);
+  document.getElementById("lifelessonnum").innerHTML = calcWordNumber(date);
+  document.getElementById("soulnum").innerHTML = calcWordNumber(vowels);
+  document.getElementById("outernum").innerHTML = calcWordNumber(conson);
+  document.getElementById("destinynum").innerHTML = calcWordNumber(fullname);
+}
+
+function translateDate(strDate) {
+  let arrDate = strDate.split("-");
+  let monthArray = ['0','January','February','March','April','May','June','July',
+    'August','September','October','November','December'];
+  let day = parseInt(arrDate[2]);
+  let year = arrDate[0];
+  let month = monthArray[parseInt(arrDate[1])];
+  if (day === 1 || day === 21 || day === 31) day = day + "st";
+  if (day === 2 || day === 22) day = day + "nd";
+  if (day === 3 || day === 23) day = day + "rd";
+  if ((day >= 4 && day <= 20) || (day >= 24 && day <= 30)) day = day.toString() + "th";
+  return "The " + day + " day, of month " + month + ", and year " + year;
 }
 
 function calcWordNumber(string) {
