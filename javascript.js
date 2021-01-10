@@ -21,6 +21,13 @@ function returnString() {
   document.getElementById("soulnum").innerHTML = calcWordNumber(vowels);
   document.getElementById("outernum").innerHTML = calcWordNumber(conson);
   document.getElementById("destinynum").innerHTML = calcWordNumber(fullname);
+
+  //In Calc word number, just get the ['Left/Master' and 'Left/Base']
+
+  //Have a separate function to format it to "Master number: " for the purpose of the strings
+
+  //Click here to get a detailed explanation of what your numbers mean!
+  //Try to pass all the numbers to the link so that they can be read from the text file
 }
 
 function translateDate(strDate) {
