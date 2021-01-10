@@ -48,13 +48,15 @@ function calcWordNumber(string) {
 	string = string.toUpperCase();
   let sum = 0;
   let master = 0;
-  //If there is no 0 or 1
+  //If there is a zero or one - calculate the date
   if (string.indexOf("0") > -1 || string.indexOf("1") > -1) {
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] >= "0" && string[i] <= "9") {
-        sum += parseInt(string[i]);
-      }
-    }
+    //Split the string evenly, three numbers
+    let splitDate = string.split("-");
+    console.log(splitDate);
+    sum += parseInt(splitDate[1]) + parseInt(splitDate[2]);
+    console.log("Sum here! " + sum);
+    sum += splitDate[0].split("").map(x => parseInt(x)).reduce((sum, x) => sum + x);
+    console.log("Sum here! " + sum);
   } else {
     for (let i = 0; i < string.length; i++) {
       if (string[i] >= "A" && string[i] <= "Z") {
@@ -69,6 +71,7 @@ function calcWordNumber(string) {
   if (sum > 78) 
   	sum = sum.toString().split("").map(x => parseInt(x)).reduce((acc, x) => acc + x);
   
+
   //Number on left side for breakdown of nums
   let left = sum;
 
