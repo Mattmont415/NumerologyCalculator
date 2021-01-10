@@ -9,7 +9,7 @@
 <body>
   <h1>Numerology Calculator</h1>
 
-  <p>Numerology dictates, that when you are born, you are bestowed four Personal 
+  <p>Numerology dictates, that when you are born, you are endowed with four Personal 
     Numbers. These numbers will help guide you with the lessons you are to learn 
     throughout your life, and the path of your spirit. They are the <em>Life 
     Lesson Number</em>, the <em>Soul Number</em>, the <em>Outer Personality 
@@ -17,12 +17,26 @@
   </p>
 
   <p>Below, you will be entering information in order to get your Life Numbers</p>
-  <p>There are four main numbers that will be described for you:</p>
-  <p></p>
-  <!-- Guess we're gonna need a form here right!? -->
-  <h3>Please enter your Full Name here (English names only, translated names won't work!)</h3>
 
-  <h3>Please enter your full birthdate</h3>
+  <!-- Guess we're gonna need a form here right!? -->
+  <form>
+    <h3>Please enter your Full Legal Name here (English names only, translated names 
+      may not work!)</h3>
+    <input id="nametext" type="text">
+    <h3>Please enter your Full Birthdate</h3>
+    <input type="date" id="date">
+
+    <br><br>
+    <input type="submit" id="submit" value="Enter!">
+  </form>
+
+  <!-- And why don't we just dynamically display the results here as well? 
+    CUZ WHY NOT? -->
+
+
+  <footer>
+    <p>Citation: "Numerology and the Divine Triangle</p>
+  </footer>
 </body>
 
 </html>
