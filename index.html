@@ -42,32 +42,47 @@
 
   <!-- And why don't we just dynamically display the results here as well? 
     CUZ WHY NOT? -->
+  <div id="displaynumberinfo">
+    <p id="display"  class="pfont">
+      <!-- Display the text of the input string/bday -->
+      Text entered:
+      <br>
+      <span id="textdisplay"></span>
+      <br>
+      Birthday entered:
+      <br>
+      <span id="bdaydisplay"></span>
 
-  <p id="display"  class="pfont">
-    <!-- Display the text of the input string/bday -->
-    Text entered:
-    <br>
-    <span id="textdisplay"></span>
-    <br>
-    Birthday entered:
-    <br>
-    <span id="bdaydisplay"></span>
+      <!-- Display the four numbers from JS file -->
+      <br><br>
+      Your Numbers: 
+      <br>
+      <span class="lblfont lbllifelesson">Life Lesson Number: </span> <span id="lifelessonnum"></span>
+      <br>
+      <span class="lblfont lblsoulnumber">Soul Number: </span> <span id="soulnum"></span>
+      <br>
+      <span class="lblfont lblouternumber">Outer Personality Number: </span> <span id="outernum"></span>
+      <br>
+      <span class="lblfont lbldestinynumber">The Path of Destiny Number: </span> <span id="destinynum"></span>
+    </p>
+  </div>
 
-    <!-- Display the four numbers from JS file -->
-    <br><br>
-    Your Numbers: 
-    <br>
-    <span class="lblfont" id="lbllifelesson">Life Lesson Number: </span> <span id="lifelessonnum"></span>
-    <br>
-    <span class="lblfont" id="lblsoulnumber">Soul Number: </span> <span id="soulnum"></span>
-    <br>
-    <span class="lblfont" id="lblouternumber">Outer Personality Number: </span> <span id="outernum"></span>
-    <br>
-    <span class="lblfont" id="lbldestinynumber">The Path of Destiny Number: </span> <span id="destinynum"></span>
-  </p>
+  <!-- After clicking on the "click here" the relevant info will be displayed below  -->
+  <div id="expandednuminfo">
+    <!-- <br><br> -->
+    <p class="pfont">After submitting your information, a detailed account of what these numbers means follows...</p>
+    <div id="divlifenumberinfo">
+      <p id="lbllifelessonlower" class="lbllifelesson"></p>
+      <p id="lifenumberinfo"></p>
+    </div>
 
+    <div id="soulnumberinfo">
+
+    </div>
+  </div>
 
   <footer>
+    <br><br><br><br><br>
     <p>Citation: "Numerology and the Divine Triangle", 1979, Authors: Faith Javane and Dusty Bunker</p>
   </footer>
 

@@ -51,15 +51,15 @@ body {
 #bdaydisplay {
   font-weight: bold;
 }
-#lbllifelesson {
+.lbllifelesson {
   color: red;
 }
-#lblsoulnumber {
+.lblsoulnumber {
   color: rgb(11, 11, 179);
 }
-#lblouternumber {
+.lblouternumber {
   color: darkorange;
 }
-#lbldestinynumber {
+.lbldestinynumber {
   color: rgb(41, 119, 41);
 }
