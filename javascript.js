@@ -1,7 +1,7 @@
 let objLetterNumber = {
 	A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, I: 9, 
   J: 1, K: 2, L: 3, M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
-  S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
+  S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8, '7': 7
 }
 
 //Passed from the HTML file to correctly format the printed data
@@ -264,7 +264,7 @@ function calcWordNumber(string) {
     console.log("Sum here! " + sum);
   } else {
     for (let i = 0; i < string.length; i++) {
-      if (string[i] >= "A" && string[i] <= "Z") {
+      if (string[i] >= "A" && string[i] <= "Z" || string[i] === '7') {
         sum += objLetterNumber[string[i]];
       }
     }
